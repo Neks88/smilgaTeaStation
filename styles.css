@@ -1,0 +1,537 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:200,300,400,700|Grand+Hotel");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --slantedText: "Grand Hotel", cursive;
+  --primaryColor: #698f3f;
+  --secondaryColor: #fca311;
+  --mainDark: #3a3e3b;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --mainTransition: all 0.3s ease-in-out;
+  --letterSpacing: 0.5rem;
+}
+body {
+  font-family: "Catamaran", sans-serif;
+  line-height: 1.5;
+}
+
+/* nav-btn */
+.nav-btn {
+  position: fixed;
+  z-index: 1;
+  top:0;
+  left:0;
+  color: var(--primaryColor);
+  margin: 1rem 1.3rem;
+  font-size: 2rem;
+  animation: bounce 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* navbar */
+
+.navbar {
+ position: fixed;
+ top:0;
+ left: 0;
+ right:0;
+ bottom:0;
+z-index: 2;
+background: var(--mainGrey);
+padding-top: 1rem;
+padding-left:2rem;
+transition: var(--mainTransition); 
+transform: translateX(-100%);
+}
+
+.showNav {
+  transform: translateX(0);
+}
+
+.nav-close {
+  font-size: 2rem;
+  cursor:pointer;
+}
+.nav-items {
+  list-style-type: none;
+}
+
+.nav-link {
+  display: block;
+  font-size: 2rem;
+  color: var(--primaryColor);
+  transition: var(--mainTransition);
+}
+
+.nav-link:hover {
+  color:var(--mainDark);
+  padding-left:0.5rem;
+}
+
+@media screen and (min-width:768px) {
+  .navbar {
+    width:30vw;
+    max-width: 20rem;
+
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+/* header */
+
+.header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/main-bcg.jpeg') center/cover no-repeat fixed;
+  position: relative;
+}
+/* banner */
+.banner {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  letter-spacing: var(--letterSpacing);
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-white {
+  color:var(--mainWhite);
+
+}
+
+.text-center {
+  text-align: center;
+
+}
+.text-primary {
+  color:var(--primaryColor);
+}
+
+.banner-subtitle{
+font-size: 2.1rem;
+font-family: var(--slantedText);
+color:var(--primaryColor);
+animation: naslov-pomocni 5s ease-in-out 1;
+
+}
+
+.banner-title {
+  font-size: 4rem;
+  font-weight: 200;
+  color:var(--mainWhite);
+  line-height:5rem;
+  margin-top: 3rem;
+  animation: naslov-glavni 5s ease-in-out 1;
+  
+}
+
+.main-btn,
+.banner-btn {
+  display: inline-block;
+  background: var(--primaryColor);
+  padding: 0.6rem 1.5rem;
+  
+  color:var(--mainDark);
+  font-size: 1.5rem;
+  font-weight: bold;
+  outline: 0.2rem solid var(--primaryColor);
+  outline-offset: 4px;
+  -moz-outline-radius: 10%; 
+  margin-top: 2rem; 
+  transition: var(--mainTransition);
+  opacity: 0.8;
+
+}
+
+.main-btn:hover,
+.banner-btn:hover {
+  color:var(--mainWhite);
+  opacity: 1;
+}
+
+
+.banner-btn {
+  padding: 1.2rem 1.5rem;
+  animation: show 5s ease-in-out 1;
+}
+
+/* animations */
+
+@keyframes show {
+  0% {
+    transform:scale(2);
+    opacity: 0;
+  }
+  
+  100% {
+    transform:scale(1);
+    opacity:0.8;
+  }
+}
+
+@keyframes naslov-pomocni {
+  0% {
+    transform:translateX(800px);
+   
+  }
+  50% {
+    transform:translateX(-300px);
+   
+  }
+
+  75% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform:translate(0);
+  }
+}
+
+@keyframes naslov-glavni {
+  0% {
+    transform:translateX(-800px);
+   
+  }
+  50% {
+    transform:translateX(300px);
+   
+  }
+  75% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform:translate(0);
+  }
+}
+/* end of animations */
+/* end of header */
+
+/* content divider */
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--primaryColor),
+    var(--secondaryColor),
+    var(--primaryColor)
+   );
+}
+/* end of content divider */
+/* skills */
+/* skill */
+.skills {
+  text-align: center;
+  background: var(--mainGrey);
+}
+.skill {
+  padding: 1rem;
+  /* transition: var(--mainTransition); */
+}
+.skil {
+  font-size: 2rem;
+  margin:2.5rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  
+}
+
+.skill-heading {
+  color:var(--primaryColor);
+  letter-spacing: 0.3rem;
+    transition: var(--mainTransition);
+  }
+  
+  .skill-text {
+    
+    max-width: 12rem;
+    margin: 0 auto;
+    margin-top:0.5rem;
+    /* text-align: center; */
+  }
+
+.skill:hover .skill-heading{
+  color: var(--mainWhite);  
+}
+
+.skill:hover .skil  {
+  transform: translateY(-5px);
+  
+}
+
+
+.skill:hover {
+  background: var(--primaryColor);
+}
+
+
+@media screen and (min-width:576px) {
+  .skill {
+    float: left;
+    width:50%;
+
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .skill {
+   
+    width:25%;
+
+  }
+}
+
+.clearfix::after, .clearfix::before {
+  content:"";
+  clear: both;
+  display: table;
+}
+
+.about {
+  width: 80vw;
+  max-width: 1170px;
+  padding:4rem 0;
+  margin:0 auto;
+
+}
+
+.about-img {
+  
+}
+
+img {
+  display: block;
+  width:100%;
+  border-radius: 10px;
+}
+
+.about-picture-container {
+  transition: var(--mainTransition);
+}
+.about-picture-container:hover {
+  transform:scale(1.1);
+}
+
+.about-info {
+  /* margin-top:2rem; */
+  /* margin-left:2rem; */
+}
+
+.section-subtitle {
+  font-family: var(--slantedText);
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  color: var(--primaryColor);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 300;
+
+}
+
+
+@media screen and (min-width:992px) {
+  .about-img,
+  .about-info {
+    width: 47%;
+    float:left;
+    
+  }
+  .about-info {
+    margin-left:3rem;
+  }
+}
+
+/* end of skills */
+
+/* products */
+.products {
+  background: var(--mainDark);
+}
+.box1,.box2,.box3,.box4 {
+width:50vw;
+margin:0 auto;
+}
+
+.sve {
+  color: var(--mainWhite);
+  
+}
+.box1 h3 {
+  font-family: var(--slantedText); 
+  font-size:3rem;
+  color: var(--primaryColor);
+  
+}
+
+.box1 h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  min-width: 262px;
+}
+
+.dugme {
+  margin-top:3rem;
+  margin-bottom: 2rem;
+
+}
+
+.boks img {
+  margin-top:3rem;
+}
+.boks h2 {
+  margin-top:1.8rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  max-width: 7rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.3rem;
+
+}
+
+.boks span {
+  font-size: 3rem;
+  font-family: var(--slantedText);
+  color:var(--primaryColor);
+  font-weight: 200;
+  letter-spacing: .3rem;
+}
+
+@media screen and (min-width:1136px) {
+  .box1,.box2,.box3,.box4 {
+    width: 25%;
+    float:left;
+    
+  } 
+.sve {
+  padding:2.4rem;
+  padding-right:0;
+}
+  .box1 {
+    padding-top:2.4rem;
+    padding-right: 2.3rem;
+  }
+  .box2,.box3,.box4 {
+    padding-right: 2.2rem;
+  }
+  /* .box4 h2 {
+    margin-bottom: 0.6rem;
+  } */
+  .products {
+    background: var(--mainDark);
+  }
+ 
+}
+
+/* contact */
+
+.contact{
+  width:100%;
+  padding: 2rem 0; 
+ 
+  height: auto;
+  min-height: 30rem;
+  background: linear-gradient(105deg,rgba(21, 31, 32, 1) 0%, rgba(180, 78, 79, 0.95) 30%, transparent 80%),url(images/form-img.jpeg) center center no-repeat/cover;
+}
+.address {
+  width: 90vw;
+  margin: 3rem auto;
+}
+
+.m {
+  margin-bottom: 2rem;
+}
+
+.m h2 span {
+font-size: 3rem;
+  font-family: var(--slantedText);
+}
+
+::-webkit-input-placeholder{
+  color:white;
+}
+.form-input {
+  background: transparent;
+  display: block;
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid var(--mainWhite);
+  outline: none;
+  margin: 2rem auto;
+  padding: 1.3rem 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.position {
+
+margin-left: 7rem;
+margin-bottom: 2rem;
+
+
+}
+
+
+
+
+
+@media screen and (min-width:1136px) {
+  .address,.form {
+    float:left;
+    width:48%;
+  }
+    .address {
+      margin-left:2rem;
+    }
+
+    .position {
+      margin-left:4rem;
+    }
+  }
+ 
+
+  /* foooter */
+footer {
+  background-color: var(--mainDark);
+  padding: 2rem 0; 
+
+ text-align: center;
+
+}
+  footer i {
+    display: inline-block;
+    margin: 2rem 1rem;
+    color: var(--mainWhite);
+  }
+
+  .green {
+    color:var(--primaryColor);
+  }
+
+  .copy {
+    font-weight: 200;
+    letter-spacing: 0.5rem;
+    color:var(--mainWhite);
+  }
+
